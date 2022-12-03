@@ -3,13 +3,18 @@ import { PropsWithChildren } from "react";
 
 import classes from "./Button.module.css";
 
-interface ButtonProps extends PropsWithChildren {
+interface ButtonProps {
   to?: string;
   href?: string;
   onClick?: () => void;
 }
 
-const Button = ({ to, href, onClick, children }: ButtonProps) => {
+const Button = ({
+  to,
+  href,
+  onClick,
+  children,
+}: PropsWithChildren<ButtonProps>) => {
   const commonProps = {
     className: classes.button,
   };
